@@ -8,7 +8,7 @@ public class ReentrantLock2 {
     /**
      * ReentrantLock 是 CAS
      * Sync 是锁升级的概念
-     *
+     * <p>
      * 下面代码中 lock 同时锁定了 m1 和 m2 方法中的代码
      * 虽然代码不在同一个 lock 锁定的块中，但是是同一把锁
      */

@@ -1,4 +1,4 @@
-package com.lilu.multithread;
+package com.lilu.multithread.comclass;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -11,7 +11,7 @@ public class TestCountDownLatch {
      * Latch 门闩
      * 区别和 join，join 将每一个线程合并在当前线程，但是 CountDownLatch 更灵活
      */
-    private static void usingCountDownLatch() {
+    static void usingCountDownLatch() {
         Thread[] threads = new Thread[100];
         CountDownLatch latch = new CountDownLatch(threads.length);
 

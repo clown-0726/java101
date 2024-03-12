@@ -1,4 +1,4 @@
-package com.lilu.multithread;
+package com.lilu.multithread.comclass;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
