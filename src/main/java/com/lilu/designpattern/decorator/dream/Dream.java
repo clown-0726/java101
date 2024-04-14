@@ -9,7 +9,11 @@ public class Dream implements AnyThing {
 
     @Override
     public void exec() {
-        System.out.println(" 梦装饰了 ");
-        anyThing.exec();
+        if (this.anyThing != null) {
+            System.out.println(" 梦装饰了 ");
+            anyThing.exec();
+        } else {
+            System.out.println(" 梦 ");
+        }
     }
 }

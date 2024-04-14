@@ -1,19 +1,19 @@
 package com.lilu.designpattern.decorator.dream;
 
-public class Moon implements AnyThing {
+public class Life implements AnyThing {
     protected AnyThing anyThing;
 
-    public Moon(AnyThing anyThing) {
+    public Life(AnyThing anyThing) {
         this.anyThing = anyThing;
     }
 
     @Override
     public void exec() {
         if (this.anyThing != null) {
-            System.out.println(" 明月装饰了 ");
-            anyThing.exec();
+            System.out.println(" 生活装饰了 ");
+            this.anyThing.exec();
         } else {
-            System.out.println(" 明月 ");
+            System.out.println(" 生活 ");
         }
     }
 }
