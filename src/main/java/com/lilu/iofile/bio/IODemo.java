@@ -1,4 +1,4 @@
-package com.lilu.io.oldio;
+package com.lilu.iofile.bio;
 
 import java.io.*;
 
@@ -21,7 +21,7 @@ public class IODemo {
         File file = new File("abc.txt");
         BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file));
         while (true) {
-            // 每次写入先会 cache 到 jvm 开辟的缓存中，缓存满了之后再通过 system call 访问 pagecache
+            // 每次写入首先缓存到 jvm 开辟的缓存中，缓存满了之后再通过 system call 访问 pagecache
             out.write("abcdefg\n".getBytes());
         }
     }

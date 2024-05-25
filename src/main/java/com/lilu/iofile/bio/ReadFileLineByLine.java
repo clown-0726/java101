@@ -1,4 +1,4 @@
-package com.lilu.inoutputstream;
+package com.lilu.iofile.bio;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
