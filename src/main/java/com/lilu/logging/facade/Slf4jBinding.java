@@ -1,4 +1,4 @@
-package com.lilu.misc.logging;
+package com.lilu.logging;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.core.util.StatusPrinter;

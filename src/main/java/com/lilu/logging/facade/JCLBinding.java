@@ -1,4 +1,4 @@
-package com.lilu.misc.logging;
+package com.lilu.logging;
 
 //import org.apache.commons.logging.Log;
 //import org.apache.commons.logging.LogFactory;
