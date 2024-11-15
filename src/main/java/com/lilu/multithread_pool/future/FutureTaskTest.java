@@ -1,4 +1,4 @@
-package com.lilu.multithread_pool;
+package com.lilu.multithread_pool.future;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
