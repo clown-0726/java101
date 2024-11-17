@@ -74,6 +74,17 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
         </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.1.7.RELEASE</version>
+        </dependency>
+
         <!-- Logging ############################################################################################## -->
         <!-- JCL: commons-logging 的应用案例 -->
         <!--        <dependency>-->
