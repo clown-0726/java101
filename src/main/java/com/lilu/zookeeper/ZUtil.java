@@ -1,15 +1,23 @@
 package com.lilu.zookeeper;
 
+import com.lilu.utils.PropertiesReader;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
 public class ZUtil {
     private static ZooKeeper zk;
-    private static String address = "127.0.0.1:2181/appconfig";
+    private static String address;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
+
+    static {
+        Properties propsConfig = PropertiesReader.getProperties("zookeeper.properties");
+        String connectString = propsConfig.getProperty("connectString");
+        address = connectString + "/appconfig";
+    }
 
     public static ZooKeeper getZooKeeper() {
         try {

@@ -1,20 +1,26 @@
 package com.lilu.zookeeper;
 
+import com.lilu.utils.PropertiesReader;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
 public class Basic {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
+        Properties propsConfig = PropertiesReader.getProperties("zookeeper.properties");
+        String connectString = propsConfig.getProperty("connectString");
 
-        // zk 没有连接池概念，有连接 session 概念，一个连接就是一个 session
-        // watch 是 session 级别的
-        // 可以写多个 zk 节点的连接，ZooKeeper 类内部会自动做负载均衡，如果这时候断开连接，zk 会自动连接到别的节点，并且 session id 不会变
-        // 连接断开之后会保持 3 秒
+        /**
+         * zk 没有连接池概念，有连接 session 概念，一个连接就是一个 session
+         * watch 是 session 级别的
+         * 可以写多个 zk 节点的连接，ZooKeeper 类内部会自动做负载均衡，如果这时候断开连接，zk 会自动连接到别的节点，并且 session id 不会变
+         * 连接断开之后会保持 3 秒
+         */
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        ZooKeeper zk = new ZooKeeper("127.0.0.1:2181", 3000, new Watcher() {
+        ZooKeeper zk = new ZooKeeper(connectString, 3000, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
                 String path = watchedEvent.getPath();
@@ -90,12 +96,13 @@ public class Basic {
                 break;
         }
 
-        // ---------------------------------------
-        // 节点类型：
-        // CreateMode.EPHEMERAL             临时节点
-        // CreateMode.EPHEMERAL_SEQUENTIAL  临时节点 + 序列化
-        // CreateMode.PERSISTENT            持久节点
-        // CreateMode.PERSISTENT_SEQUENTIAL 持久节点 + 序列化
+        /**
+         * 节点类型：
+         * CreateMode.EPHEMERAL             临时节点
+         * CreateMode.EPHEMERAL_SEQUENTIAL  临时节点 + 序列化
+         * CreateMode.PERSISTENT            持久节点
+         * CreateMode.PERSISTENT_SEQUENTIAL 持久节点 + 序列化
+         */
 
         // 创建节点操作没有回调，是产生事件的
         String s = zk.create("/abc", "data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);

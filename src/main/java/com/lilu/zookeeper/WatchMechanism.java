@@ -25,16 +25,9 @@ public class WatchMechanism {
         while (true) {
         }
 
-        /*
-          有 watch 的方法：
-          getData
-          getChildren
-          exists
-
-          没有 watch 的方法：
-          create
-          delete
-          setData
+        /**
+         * 有 watch 的方法：getData / getChildren / exists
+         * 没有 watch 的方法：create / delete / setData
          */
     }
 }
