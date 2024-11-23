@@ -1,0 +1,23 @@
+{
+  "_id": {
+    "_data": "8267254770000000042B022C0100296E5A10044D34F0403DEB48F8A0E3E80CF262C8BE463C5F6964003C665F67695769756F394F73426C566B576234456534445347000004"
+  },
+  "clusterTime": 1730496368000,
+  "documentKey": {
+    "_id": "f_giWiuo9OsBlVkWb4Ee4DSG"
+  },
+  "ns": {
+    "coll": "filing_data",
+    "db": "filing_reports"
+  },
+  "operationType": "update",
+  "updateDescription": {
+    "removedFields": [],
+    "truncatedArrays": [],
+    "updatedFields": {
+      "x_status_list.status_extract.status": "extract_done",
+      "x_others.k_ignore": "v1"
+    }
+  },
+  "wallTime": 1730496368305
+}
