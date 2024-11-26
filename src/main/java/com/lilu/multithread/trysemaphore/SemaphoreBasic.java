@@ -1,8 +1,8 @@
-package com.lilu.multithread.comclass;
+package com.lilu.multithread.trysemaphore;
 
 import java.util.concurrent.Semaphore;
 
-public class TestSemaphore {
+public class SemaphoreBasic {
     public static void main(String[] args) {
         // 允许一个线程同时执行
         // 线程限流，控制线程运行的最大数量
